@@ -13,7 +13,7 @@ class OtrmController extends Controller
      */
     public function index()
     {
-        //
+        return view('otrm.index');
     }
 
     /**

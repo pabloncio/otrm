@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class OtrmTable extends Migration
+class CreateRolesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,10 @@ class OtrmTable extends Migration
      */
     public function up()
     {
-      Schema::create('otrms', function (Blueprint $table) {
-        $table->increments('id');
-        $table->date('date_in');
-        $table->date('date_out');
-        $table->integer('amount');
-        $table->integer('deposit');
-        $table->string('status');
-        $table->timestamps();
-      });
+        Schema::create('roles', function (Blueprint $table) {
+            $table->increments('id');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -31,6 +26,6 @@ class OtrmTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('roles');
     }
 }
