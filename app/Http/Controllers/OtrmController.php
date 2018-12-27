@@ -11,7 +11,6 @@ class OtrmController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
     {
         return view('otrm.index');
     }
