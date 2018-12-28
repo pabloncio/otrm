@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Otrm;
 use Illuminate\Http\Request;
 
 class OtrmController extends Controller
@@ -13,12 +13,20 @@ class OtrmController extends Controller
      */
     public function index(Request $request)
     {
-      /*if($request->ajax())
-      {
+      if($request->ajax()){
         return response()->json([
-            ['id' => 1, 'name' =]
-        ]);
-      }*/
+            ['id' => 1, 'date_in' =>'27-12-2018', 'date_out'=>'30-12-2018', 'amount'=>20000, 'payment'=>3000, 'status'=>'pending'],
+            ['id' => 1, 'date_in' =>'27-12-2018', 'date_out'=>'30-12-2018', 'amount'=>20000, 'payment'=>3000, 'status'=>'pending'],
+            ['id' => 1, 'date_in' =>'27-12-2018', 'date_out'=>'30-12-2018', 'amount'=>20000, 'payment'=>3000, 'status'=>'pending'],
+            ['id' => 1, 'date_in' =>'27-12-2018', 'date_out'=>'30-12-2018', 'amount'=>20000, 'payment'=>3000, 'status'=>'pending'],
+            ['id' => 1, 'date_in' =>'27-12-2018', 'date_out'=>'30-12-2018', 'amount'=>20000, 'payment'=>3000, 'status'=>'pending'],
+            ['id' => 1, 'date_in' =>'27-12-2018', 'date_out'=>'30-12-2018', 'amount'=>20000, 'payment'=>3000, 'status'=>'pending'],
+            ['id' => 1, 'date_in' =>'27-12-2018', 'date_out'=>'30-12-2018', 'amount'=>20000, 'payment'=>3000, 'status'=>'pending'],
+            ['id' => 1, 'date_in' =>'27-12-2018', 'date_out'=>'30-12-2018', 'amount'=>20000, 'payment'=>3000, 'status'=>'pending'],
+            ['id' => 1, 'date_in' =>'27-12-2018', 'date_out'=>'30-12-2018', 'amount'=>20000, 'payment'=>3000, 'status'=>'pending'],
+            ['id' => 1, 'date_in' =>'27-12-2018', 'date_out'=>'30-12-2018', 'amount'=>20000, 'payment'=>3000, 'status'=>'pending']
+        ], 200);
+      }
         return view('otrm.index');
     }
 
@@ -40,7 +48,18 @@ class OtrmController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if($request->ajax()){
+          $otrm = new Otrm();
+          $otrm->date_in = $request->input('date_in');
+          $otrm->date_out = $request->input('date_out');
+          $otrm->amount = $request->input('amount');
+          $otrm->payment = $request->input('payment');
+          $otrm->save();
+
+          return response()->json([
+            "message"=>"Otrm saved"
+          ], 200);
+        }
     }
 
     /**

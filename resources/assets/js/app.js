@@ -17,7 +17,8 @@ window.Vue = require('vue');
 
 Vue.component('example', require('./components/Example.vue'));
 Vue.component('add-otrm', require('./components/Otrm/Add.vue'));
-
+Vue.component('list-otrm', require('./components/Otrm/List.vue'));
+Vue.component('create-otrm', require('./components/Otrm/Create.vue'));
 const app = new Vue({
     el: '#app'
 });

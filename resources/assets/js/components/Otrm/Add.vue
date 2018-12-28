@@ -1,19 +1,7 @@
 <template>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Formulario Ingreso de Orden de Trabajo</div>
-
-                    <div class="panel-body">
-                        <form>
-
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <button style="margin-top: 20px" type="button" class="btn btn-primary" data-toggle="modal" data-target="#addOtrm">
+      Nuevo
+    </button>
 </template>
 
 <script>
