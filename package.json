@@ -22,7 +22,7 @@
     "vue": "^2.1.10"
   },
   "dependencies": {
-    "babel-loader": "^8.0.5",
+    "babel-loader": "^7.1.5",
     "babel-register": "^6.26.0"
   }
 }
